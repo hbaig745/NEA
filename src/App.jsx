@@ -10,12 +10,12 @@ import Header from "./components/Header";
 import Profile from "./pages/Profile";
 
 function App() {
-  const { loggedIn, changeLoggedIn } = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <>
       <Router>
-        <Header loggedIn={loggedIn} changeLoggedIn={changeLoggedIn} />
+        <Header loggedIn={loggedIn} />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />}></Route>
