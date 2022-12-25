@@ -1,28 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Profile from "../pages/Profile";
-import LogInModal from "./LogInModal";
-import RegisterModal from "./RegisterModal";
+import "./Header.css";
 
 function Header({ loggedIn, changeLoggedIn }) {
   const loggedInlocal = loggedIn;
   const [isOpen, setIsOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  return (
-    <div>
-      <h1>Fitness Factory</h1>
-      {loggedInlocal ? (
-        <Link to='/profile'><button>Profile</button></Link>
-      ) : (
-        <div>
-          <button onClick={() => setIsOpen(true)}>Log In</button>
 
-          <button onClick={() => setIsRegisterOpen(true)}>register</button>
-          {isOpen && <LogInModal setIsOpen={setIsOpen} />}
-          {isRegisterOpen && (
-            <RegisterModal setIsRegisterOpen={setIsRegisterOpen} />
-          )}
-        </div>
+  return (
+    <div id="header">
+      <img src="./favicon.ico" alt="" />
+      <h1 id="title">Fitness Factory</h1>
+      {loggedInlocal ? (
+        <Link to="/profile">
+          <button>Profile</button>
+        </Link>
+      ) : (
+
+          <Link to='/log-in'>log in</Link>
+  
       )}
     </div>
   );

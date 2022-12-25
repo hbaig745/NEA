@@ -1,0 +1,14 @@
+#sidebar-button {
+  height: 70px;
+  
+}
+
+#sidebar-button:hover {
+  background-color: grey;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
