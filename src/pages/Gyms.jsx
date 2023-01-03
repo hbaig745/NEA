@@ -5,8 +5,8 @@ function Gyms() {
   const [initalData, setData] = useState([{}]);
 
   useEffect(() => {
-    fetch("/members")
-      .then((res) => res.json())
+    fetch('http://localhost:3005/members')
+      .then((res) => res)
       .then((data) => {
         setData(data);
         console.log(data);

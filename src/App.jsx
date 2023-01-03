@@ -14,28 +14,27 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
-    <>
+    <div id="container">
       <Router>
         <Header loggedIn={loggedIn} />
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/local-gyms"
-            element={<Gyms />}
-          ></Route>
-          <Route path="/book-classes" element={<Classes />}></Route>
-          <Route
-            path="/profile"
-            element={<Profile setLoggedIn={setLoggedIn} />}
-          ></Route>
-          <Route
-            path="/log-in"
-            element={<LogIn changeLoggedIn={setLoggedIn} />}
-          ></Route>
-        </Routes>
+        <div>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/local-gyms" element={<Gyms />}></Route>
+            <Route path="/book-classes" element={<Classes />}></Route>
+            <Route
+              path="/profile"
+              element={<Profile setLoggedIn={setLoggedIn} />}
+            ></Route>
+            <Route
+              path="/log-in"
+              element={<LogIn changeLoggedIn={setLoggedIn} />}
+            ></Route>
+          </Routes>
+        </div>
       </Router>
-    </>
+    </div>
   );
 }
 

@@ -1,9 +1,9 @@
-import "./login.css";
+import "./pages.css";
 import { Link } from "react-router-dom";
 
 function LogIn({ changeLoggedIn }) {
   return (
-    <div id="log">
+    <div id="main">
       <div>
         <label htmlFor="email">
           <b>email</b>
