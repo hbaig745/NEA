@@ -14,7 +14,7 @@ function Gyms() {
   }, []);
   return (
     <div id="main">
-      <p>{ initalData.members}</p>
+      <p>{initalData.members}</p>
     </div>
   );
 }
