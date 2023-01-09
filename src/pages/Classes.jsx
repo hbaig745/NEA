@@ -1,6 +1,10 @@
 import './pages.css'
+import { useEffect } from 'react'
 
-function Classes() {
+function Classes({ navigation }) {
+    useEffect(() => {
+        navigation()
+      }, [])
     return (
         <div id='main'>
 

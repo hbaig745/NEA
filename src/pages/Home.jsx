@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import "./pages.css";
 
-function Home() {
+function Home({closeNav, isNav }) {
+  useEffect(() => {
+    if (isNav) {
+      closeNav()
+    }
+  }, [])
+
   return (
     <div id="main">
       <iframe
