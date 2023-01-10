@@ -29,6 +29,12 @@ function App() {
     }
   }
 
+  function checkNav() {
+    if (isNav) {
+      closeNav()
+    }
+  }
+
   function openNav() {
     document.getElementById("navigation").style.width = "15%";
     document.getElementById("main").style.width = "85%";
@@ -46,14 +52,14 @@ function App() {
         <div>
           <Nav />
           <Routes>
-            <Route path="/" element={<Home closeNav={closeNav} isNav={isNav} />}></Route>
+            <Route path="/" element={<Home navigation={checkNav} />}></Route>
             <Route
               path="/local-gyms"
-              element={<Gyms navigation={navigation} />}
+              element={<Gyms navigation={checkNav} />}
             ></Route>
             <Route
               path="/book-classes"
-              element={<Classes navigation={navigation} />}
+              element={<Classes navigation={checkNav} />}
             ></Route>
             <Route
               path="/profile"

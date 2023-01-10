@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import "./pages.css";
 
-function Home({closeNav, isNav }) {
+function Home({ navigation }) {
   useEffect(() => {
-    if (isNav) {
-      closeNav()
-    }
+    navigation()
   }, [])
 
   return (

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import "./pages.css";
 
-function Gyms({navigation}) {
+function Gyms({ navigation }) {
   const [initalData, setData] = useState([{}]);
   useEffect(() => {
-    navigation()
-  }, [])
+    navigation();
+  }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3005/members')
+    fetch("/members")
       .then((res) => res)
       .then((data) => {
         setData(data);
