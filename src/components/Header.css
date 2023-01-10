@@ -5,4 +5,9 @@
   height: 8%;
   position: fixed;
   top: 0;
+  background-color: #222222;
+}
+
+#title {
+  color: rgb(32, 211, 211);
 }
