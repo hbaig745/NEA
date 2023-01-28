@@ -14,8 +14,10 @@ import Classes from "./pages/Classes";
 import Header from "./components/Header";
 import Profile from "./pages/Profile";
 import LogIn from "./pages/LogIn";
+import Register from "./pages/Register";
 
 function App() {
+  const [userDetails, changeUserDetails] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [isNav, setIsNav] = useState(false);
 
@@ -23,26 +25,29 @@ function App() {
     if (isNav) {
       closeNav();
       setIsNav(false);
+      console.log('closing')
     } else {
       openNav();
       setIsNav(true);
+      console.log('opening')
     }
   }
 
   function checkNav() {
     if (isNav) {
-      closeNav()
+      closeNav();
     }
   }
 
   function openNav() {
     document.getElementById("navigation").style.width = "15%";
-    document.getElementById("main").style.width = "85%";
+    document.getElementById("main").style.marginLeft = "15%";
   }
 
   function closeNav() {
     document.getElementById("navigation").style.width = "0%";
-    document.getElementById("main").style.width = "100%";
+    document.getElementById("main").style.marginLeft = "0%";
+
   }
 
   return (
@@ -63,11 +68,33 @@ function App() {
             ></Route>
             <Route
               path="/profile"
-              element={<Profile setLoggedIn={setLoggedIn} />}
+              element={
+                <Profile
+                  setLoggedIn={setLoggedIn}
+                  userDetails={userDetails}
+                  navigation={checkNav}
+                />
+              }
             ></Route>
             <Route
               path="/log-in"
-              element={<LogIn changeLoggedIn={setLoggedIn} />}
+              element={
+                <LogIn
+                  changeLoggedIn={setLoggedIn}
+                  changeUserDetails={changeUserDetails}
+                  navigation={checkNav}
+                />
+              }
+            ></Route>
+            <Route
+              path="/register"
+              element={
+                <Register
+                  navigation={checkNav}
+                  setLoggedIn={setLoggedIn}
+                  changeUserDetails={changeUserDetails}
+                />
+              }
             ></Route>
           </Routes>
         </div>
