@@ -1,30 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./Nav.css";
 
 function Nav() {
+  const navigate = useNavigate();
   return (
     <nav id="navigation">
-      <button id="nav-buttons">
-        <Link to="/" id="button-text">Home</Link>
+      <button id="nav-buttons" onClick={() => navigate("/")}>
+        Home
       </button>
-      <button id="nav-buttons">
-        <Link to="/local-gyms" id="button-text">Local Gyms</Link>
+      <button id="nav-buttons" onClick={() => navigate("/local-gyms")}>
+        Local Gyms
       </button>
-      <button id="nav-buttons">
-        <Link to="book-classes" id="button-text">Book classes</Link>
-      </button >
-      <button id="nav-buttons">
-        <Link to="book-classes" id="button-text">Contact</Link>
-      </button >
-      <button id="nav-buttons">
-        <a href="https://www.youtube.com/@PureGymVideo" target='_blank' id="button-text">YouTube</a>
-      </button >
-      <button id="nav-buttons">
-        <Link to="book-classes" id="button-text">Book classes</Link>
-      </button >
-      <button id="nav-buttons">
-        <Link to="book-classes" id="button-text">Book classes</Link>
-      </button >
+      <button id="nav-buttons" onClick={() => navigate("/book-classes")}>
+        Book classes
+      </button>
+      <button id="nav-buttons" onClick={() => navigate("/book-classes")}>
+        Contact
+      </button>
+      <a href="https://www.youtube.com/@PureGymVideo" target='_blank'>
+        <button id="nav-buttons">YouTube</button>
+      </a>
+      <button id="nav-buttons" onClick={() => navigate("/book-classes")}>
+        Book classes
+      </button>
     </nav>
   );
 }

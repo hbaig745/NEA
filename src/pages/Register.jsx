@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { motion } from 'framer-motion';
+import './login.css'
 
 function Register({ navigation, setLoggedIn, changeUserDetails }) {
   const navigate = useNavigate();
@@ -44,7 +46,7 @@ function Register({ navigation, setLoggedIn, changeUserDetails }) {
       navigate('/');
     })
       .catch(function (error) {
-      document.getElementById("register_error_message").innerHTML =
+      document.getElementById("login_error_message").innerHTML =
         "Username is already taken";
     }) 
 
@@ -55,46 +57,46 @@ function Register({ navigation, setLoggedIn, changeUserDetails }) {
   }
 
   return (
-    <div id="main">
-      <div>
-        <label htmlFor="email">
-          <b>email</b>
-        </label>
-        <input type="text" placeholder="Enter email" id="email"/>
+    <motion.div id="main" initial={{ opacity: 0, transition: '1s' }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: '1s' }}>
+      <div id="box">
+        <div class='login-box' id="register-box">
+
+      <div class="entries"id="register-entries">
+        <p id="login-text">Email</p>
+        <input type="text" placeholder="Enter email" id="email" class='login-inputs'/>
       </div>
 
-      <div>
-        <label htmlFor="password">
-          <b>password</b>
-        </label>
-        <input type="password" placeholder="Enter password" id="password" />
+      <div class="entries"id="register-entries">
+      <p id="login-text">Password</p>
+        <input type="password" placeholder="Enter password" id="password" class='login-inputs'/>
       </div>
 
-      <div>
-        <label htmlFor="username">
-          <b>username</b>
-        </label>
-        <input type="text" placeholder="Enter username" id="username" />
+      <div class="entries"id="register-entries">
+      <p id="login-text">Username</p>
+        <input type="text" placeholder="Enter username" id="username" class='login-inputs'/>
       </div>
 
-      <div>
-        <label htmlFor="name">
-          <b>name</b>
-        </label>
-        <input type="text" placeholder="Enter name" id="name" />
+      <div class="entries"id="register-entries">
+      <p id="login-text">Name</p>
+        <input type="text" placeholder="Enter name" id="name" class='login-inputs'/>
       </div>
 
-      <div>
-        <label htmlFor="phone number">
-          <b>phone number</b>
-        </label>
-        <input type="integer" placeholder="Enter Phone Number" id="phoneNumber" />
+      <div class="entries" id="register-entries">
+      <p id="login-text">Phone Number</p>
+        <input type="integer" placeholder="Enter Phone Number" id="phoneNumber" class='login-inputs'/>
       </div>
+          <div id="h2-div">
+            
+      <h2 id="login_error_message"></h2>
+          </div>
+          <div id="login-button-div">
 
-      <h1 id="register_error_message"></h1>
-      <button onClick={submit}>submit</button>
-      <button onClick={goLogIn}>log in</button>
-    </div>
+      <button onClick={submit} id='login-buttons'>Submit</button>
+      <button onClick={goLogIn} id='login-buttons'>Log in</button>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
