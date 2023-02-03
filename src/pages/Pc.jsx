@@ -1,8 +1,12 @@
 import React from "react";
 import './pages.css'
 
+
+
 function Pc() {
-    return <div>
+  return <div id="box">
+    <div class="login-box" id="pc-box"> 
+
         <a href="https://uk.pcpartpicker.com/list/2DvWqm">PCPartPicker Part List</a>
 <table class="pcpp-part-list">
   <thead>
@@ -79,6 +83,7 @@ function Pc() {
     </tr>
   </tbody>
 </table>
+    </div>
     </div>
 }
 
