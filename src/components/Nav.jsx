@@ -20,8 +20,8 @@ function Nav() {
       <a href="https://www.youtube.com/@PureGymVideo" target='_blank'>
         <button id="nav-buttons">YouTube</button>
       </a>
-      <button id="nav-buttons" onClick={() => navigate("/book-classes")}>
-        Book classes
+      <button id="nav-buttons" onClick={() => navigate('/pc')}>
+        Pc
       </button>
     </nav>
   );

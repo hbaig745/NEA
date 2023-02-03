@@ -5,6 +5,7 @@ import Classes from "./Classes";
 import Profile from "./Profile";
 import LogIn from "./LogIn";
 import Register from "./Register";
+import Pc from './Pc'
 import {
   BrowserRouter as Router,
   Route,
@@ -59,6 +60,9 @@ function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails})
             />
           }
         ></Route>
+        <Route path="/pc" element={<Pc />}>
+        
+        </Route>
       </Routes>
     </AnimatePresence>
   );

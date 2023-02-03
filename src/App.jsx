@@ -17,6 +17,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isNav, setIsNav] = useState(false);
 
+
+
   function navigation() {
     if (isNav) {
       closeNav();

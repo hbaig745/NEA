@@ -1,3 +1,84 @@
 p {
-    color: white;
+  color: white;
 }
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 89vh;
+  width: 100%;
+  position: fixed;
+}
+
+#picture {
+  width: 70%;
+  height: 100%;
+}
+
+.gym-boxes {
+  background-color: rgb(29, 29, 29);
+  padding: 8vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  width: 45%;
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(36, 165, 182, 0.4) 0px 6px 40px 15px,
+    rgba(0, 0, 0, 0.12) 0px -12px 50px, rgba(0, 0, 0, 0.12) 0px 36px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 9em;
+  margin: 3vh;
+}
+
+#control-box {
+  height: 60%;
+}
+
+#label-div {
+  height: 50%;
+  margin: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3%;
+
+}
+
+
+#buttons-div {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#gym-button {
+    width: 25%;
+  margin-inline: 6%;
+  transition: 0.5s ease;
+  background-color: rgb(17, 183, 183);
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border-radius: 9999em;
+  border: 2px solid rgb(163, 163, 163);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  font-weight: bold;
+  font-family: "Abel", sans-serif;
+}
+
+#gym-button:hover {
+    background-color: grey;
+  }
+
+

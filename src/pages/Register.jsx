@@ -27,7 +27,7 @@ function Register({ navigation, setLoggedIn, changeUserDetails }) {
     }
 
     if (password.length < 8) {
-      document.getElementById("register_error_message").innerHTML =
+      document.getElementById("login_error_message").innerHTML =
         "Password Must be at least 8 characters";
       return
     }
