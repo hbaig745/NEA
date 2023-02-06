@@ -24,7 +24,7 @@ function LogIn({ changeLoggedIn, changeUserDetails, navigation }) {
     }
 
     axios
-      .get("/user?username=" + username + "&password=" + password)
+      .get("https://hbaig745.pythonanywhere.com/user?username=" + username + "&password=" + password)
       .then((res) => {
         console.log(res.data.data);
         if (res.data.data == true) {
