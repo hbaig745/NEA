@@ -40,7 +40,7 @@ function Register({ navigation, setLoggedIn, changeUserDetails }) {
           'phone': phone
     }
     
-    axios.post("/user?data=" + JSON.stringify(data)).then(() => {
+    axios.post("https://hbaig745.pythonanywhere.com/user?data=" + JSON.stringify(data)).then(() => {
       setLoggedIn(true)
       changeUserDetails({username: username, password: password})
       navigate('/');

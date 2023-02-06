@@ -10,7 +10,7 @@ function Gyms({ navigation }) {
   useEffect(() => {
     navigation();
     axios
-      .get("gym_info?gym=?" + document.getElementById("current_gym").value)
+      .get("https://hbaig745.pythonanywhere.com/gym_info?gym=?" + document.getElementById("current_gym").value)
       .then((res) => {
         setGymData(JSON.stringify(res.data));
       });
@@ -19,7 +19,7 @@ function Gyms({ navigation }) {
   function find_gym() {
     axios
       .get(
-        "/closest_gym?current_gym=" +
+        "https://hbaig745.pythonanywhere.com/closest_gym?current_gym=" +
           document.getElementById("current_gym").value
       )
       .then((res) => {
@@ -44,7 +44,7 @@ function Gyms({ navigation }) {
     >
       <div id="box">
         <div id="picture-box" class="gym-boxes">
-          <img src="/gymgraph-picture" alt="" id="picture" />
+          <img src="https://hbaig745.pythonanywhere.com/gymgraph-picture" alt="" id="picture" />
         </div>
         <div class="gym-boxes" id="control-box">
           <div id="label-div">
