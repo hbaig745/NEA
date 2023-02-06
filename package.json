@@ -1,6 +1,6 @@
 {
   "name": "nea",
-  "proxy": "http://localhost:3005/",
+  "proxy": "https://hbaig745.pythonanywhere.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
