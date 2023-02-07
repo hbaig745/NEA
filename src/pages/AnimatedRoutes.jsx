@@ -14,8 +14,9 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Contact from "./Contact";
 
-function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails}) {
+function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails, loggedIn}) {
   const location = useLocation();
 
   return (
@@ -28,7 +29,7 @@ function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails})
         ></Route>
         <Route
           path="/book-classes"
-          element={<Classes navigation={checkNav} />}
+          element={<Classes navigation={checkNav} loggedIn={loggedIn} />}
         ></Route>
         <Route
           path="/profile"
@@ -47,6 +48,7 @@ function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails})
               changeLoggedIn={setLoggedIn}
               changeUserDetails={changeUserDetails}
               navigation={checkNav}
+              loggedIn={loggedIn}
             />
           }
         ></Route>
@@ -63,6 +65,7 @@ function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails})
         <Route path="/pc" element={<Pc />}>
         
         </Route>
+        <Route path="/contact" element={<Contact navigation={checkNav} loggedIn={loggedIn } />}></Route>
       </Routes>
     </AnimatePresence>
   );

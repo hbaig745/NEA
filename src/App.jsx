@@ -51,8 +51,8 @@ function App() {
       <Router>
         <Header loggedIn={loggedIn} navigation={navigation} />
         <div>
-          <Nav />
-          <AnimatedRoutes checkNav={checkNav} setLoggedIn={setLoggedIn} userDetails={userDetails} changeUserDetails={ changeUserDetails} />
+          <Nav loggedIn={loggedIn} />
+          <AnimatedRoutes checkNav={checkNav} setLoggedIn={setLoggedIn} userDetails={userDetails} changeUserDetails={ changeUserDetails} loggedIn={loggedIn} />
         </div>
       </Router>
     </div>

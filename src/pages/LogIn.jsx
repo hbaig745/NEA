@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 import './login.css'
 import { motion } from "framer-motion";
 
-function LogIn({ changeLoggedIn, changeUserDetails, navigation }) {
+function LogIn({ changeLoggedIn, changeUserDetails, navigation, loggedIn  }) {
   
   const navigate = useNavigate();
   useEffect(() => {
+
     navigation();
   }, []);
 

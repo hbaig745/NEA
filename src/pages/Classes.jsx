@@ -1,8 +1,9 @@
 import './pages.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 
-function Classes({ navigation }) {
+function Classes({ navigation, loggedIn }) {
+
     useEffect(() => {
         navigation()
       }, [])
