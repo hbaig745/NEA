@@ -63,7 +63,6 @@ function Classes({ navigation, loggedIn, userDetails }) {
   function showClasses() {
     document.getElementById("class-box").innerHTML = "";
     axios.get("https://hbaig745.pythonanywhere.com/classes").then((res) => {
-      console.log((res.data))
       var table = document.createElement("table");
       var tableBody = document.createElement("tbody");
       var row = document.createElement("tr"); 

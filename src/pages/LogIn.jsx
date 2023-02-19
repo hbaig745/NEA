@@ -32,7 +32,7 @@ function LogIn({ changeLoggedIn, changeUserDetails, navigation, loggedIn }) {
       .then((res) => {
         if (res.data.data == true) {
           axios
-            .get("http://localhost:3005/get_user_details?username=" + username)
+            .get("https://hbaig745.pythonanywhere.com/get_user_details?username=" + username)
             .then((result) => {
               changeUserDetails({
                 username: username,
