@@ -11,24 +11,29 @@ function Gyms({ navigation }) {
     navigation();
     show_graph();
     axios
-      .get("https://hbaig745.pythonanywhere.com/gym_info?gym=?" + document.getElementById("current_gym").value)
+      .get(
+        "https://hbaig745.pythonanywhere.com/gym_info?gym=?" +
+          document.getElementById("current_gym").value
+      )
       .then((res) => {
         setGymData(JSON.stringify(res.data));
       });
-    }, []);
-    
-    function show_graph() {
-      document.getElementById('picture-box').innerHTML = '<img src="https://hbaig745.pythonanywhere.com/gymgraph-picture" alt="" id="picture" />';
+  }, []);
+
+  function show_graph() {
+    document.getElementById("picture-box").innerHTML =
+      '<img src="https://hbaig745.pythonanywhere.com/gymgraph-picture" alt="" id="picture" />';
   }
 
   function find_gym() {
-    if (document.getElementById("current_gym").value == '') {
-      document.getElementById("picture-box").innerHTML = 'Please enter a letter';
-      document.getElementById("picture-box").style.color = 'red';
-      return
+    if (document.getElementById("current_gym").value == "") {
+      document.getElementById("picture-box").innerHTML =
+        "Please enter a letter";
+      document.getElementById("picture-box").style.color = "red";
+      return;
     }
-    document.getElementById("picture-box").style.color = 'white';
-    
+    document.getElementById("picture-box").style.color = "white";
+
     axios
       .get(
         "https://hbaig745.pythonanywhere.com/closest_gym?current_gym=" +
@@ -40,12 +45,13 @@ function Gyms({ navigation }) {
   }
 
   function gym_info() {
-    if (document.getElementById("current_gym").value == '') {
-      document.getElementById("current_gym").placeholder = 'Please enter a letter';
-      document.getElementById("picture-box").style.color = 'red';
-      return
+    if (document.getElementById("current_gym").value == "") {
+      document.getElementById("current_gym").placeholder =
+        "Please enter a letter";
+      document.getElementById("picture-box").style.color = "red";
+      return;
     }
-    document.getElementById("picture-box").style.color = 'white';
+    document.getElementById("picture-box").style.color = "white";
     var current_gym = document.getElementById("current_gym").value;
 
     document.getElementById("picture-box").innerHTML = JSON.stringify(
@@ -61,8 +67,7 @@ function Gyms({ navigation }) {
       exit={{ opacity: 0, transition: "1s" }}
     >
       <div id="box">
-        <div id="picture-box" class="gym-boxes">
-        </div>
+        <div id="picture-box" class="gym-boxes"></div>
         <div class="gym-boxes" id="control-box">
           <div id="label-div">
             <label htmlFor="start_gym" id="login-text">
@@ -77,7 +82,7 @@ function Gyms({ navigation }) {
             />
           </div>
           <div id="buttons-div">
-          <button onClick={show_graph} id="gym-button">
+            <button onClick={show_graph} id="gym-button">
               Show Graph
             </button>
             <button onClick={find_gym} id="gym-button">

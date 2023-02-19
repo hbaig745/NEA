@@ -5,7 +5,7 @@ import Classes from "./Classes";
 import Profile from "./Profile";
 import LogIn from "./LogIn";
 import Register from "./Register";
-import Pc from './Pc'
+import Pc from "./Pc";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,7 +16,13 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Contact from "./Contact";
 
-function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails, loggedIn}) {
+function AnimatedRoutes({
+  checkNav,
+  changeUserDetails,
+  setLoggedIn,
+  userDetails,
+  loggedIn,
+}) {
   const location = useLocation();
 
   return (
@@ -29,7 +35,13 @@ function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails, 
         ></Route>
         <Route
           path="/book-classes"
-          element={<Classes navigation={checkNav} loggedIn={loggedIn} />}
+          element={
+            <Classes
+              navigation={checkNav}
+              loggedIn={loggedIn}
+              userDetails={userDetails}
+            />
+          }
         ></Route>
         <Route
           path="/profile"
@@ -62,10 +74,11 @@ function AnimatedRoutes({checkNav, changeUserDetails, setLoggedIn, userDetails, 
             />
           }
         ></Route>
-        <Route path="/pc" element={<Pc />}>
-        
-        </Route>
-        <Route path="/contact" element={<Contact navigation={checkNav} loggedIn={loggedIn } />}></Route>
+        <Route path="/pc" element={<Pc />}></Route>
+        <Route
+          path="/contact"
+          element={<Contact navigation={checkNav} loggedIn={loggedIn} />}
+        ></Route>
       </Routes>
     </AnimatePresence>
   );

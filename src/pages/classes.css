@@ -1,0 +1,23 @@
+#class-box {
+  color: white;
+  display: flex;
+  width: 65%;
+}
+
+table {
+  table-layout: fixed;
+  width: 90%;
+}
+
+td {
+  padding: 4px;
+  text-align: center;
+}
+
+td.from,
+td.date {
+  width: 70%;
+}
+td.subject {
+  width: 70%;
+}

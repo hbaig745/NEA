@@ -11,13 +11,10 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 import AnimatedRoutes from "./pages/AnimatedRoutes";
 
-
 function App() {
   const [userDetails, changeUserDetails] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [isNav, setIsNav] = useState(false);
-
-
 
   function navigation() {
     if (isNav) {
@@ -52,7 +49,13 @@ function App() {
         <Header loggedIn={loggedIn} navigation={navigation} />
         <div>
           <Nav loggedIn={loggedIn} />
-          <AnimatedRoutes checkNav={checkNav} setLoggedIn={setLoggedIn} userDetails={userDetails} changeUserDetails={ changeUserDetails} loggedIn={loggedIn} />
+          <AnimatedRoutes
+            checkNav={checkNav}
+            setLoggedIn={setLoggedIn}
+            userDetails={userDetails}
+            changeUserDetails={changeUserDetails}
+            loggedIn={loggedIn}
+          />
         </div>
       </Router>
     </div>

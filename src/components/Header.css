@@ -54,13 +54,12 @@
   justify-content: center;
   align-items: center;
   left: 0;
-  font-weight: bold ;
-  font-family: 'Abel', sans-serif;
+  font-weight: bold;
+  font-family: "Abel", sans-serif;
 }
 
 #button:hover {
-    background-color: grey;
-  
+  background-color: grey;
 }
 
 #button-text {
@@ -68,7 +67,6 @@
   text-decoration: inherit;
   font-weight: bold;
 }
-
 
 #menu-button {
   width: 4vw;
