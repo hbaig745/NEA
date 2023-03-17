@@ -27,6 +27,7 @@ function Gyms({ navigation }) {
 
   function find_gym() {
     let letter = document.getElementById("current_gym").value.toUpperCase();
+    console.log(letter)
     if (letter == "") {
       document.getElementById("picture-box").innerHTML =
       "Please enter a letter";
@@ -45,7 +46,7 @@ function Gyms({ navigation }) {
     axios
       .get(
         "https://hbaig745.pythonanywhere.com/closest_gym?current_gym=" +
-          document.getElementById("current_gym").value
+          letter
       )
       .then((res) => {
         document.getElementById("picture-box").innerHTML = res.data;
@@ -68,7 +69,7 @@ function Gyms({ navigation }) {
     }
     
     document.getElementById("picture-box").style.color = "white";
-    var current_gym = document.getElementById("current_gym").value;
+    var current_gym = letter;
 
     document.getElementById("picture-box").innerHTML = JSON.stringify(
       JSON.parse(gymData)[current_gym]
