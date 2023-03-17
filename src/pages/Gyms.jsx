@@ -26,7 +26,7 @@ function Gyms({ navigation }) {
   }
 
   function find_gym() {
-    let letter = document.getElementById("current_gym").value;
+    let letter = document.getElementById("current_gym").value.toUpperCase();
     if (letter == "") {
       document.getElementById("picture-box").innerHTML =
       "Please enter a letter";
@@ -53,7 +53,7 @@ function Gyms({ navigation }) {
   }
 
   function gym_info() {
-    let letter = document.getElementById("current_gym").value;
+    let letter = document.getElementById("current_gym").value.toUpperCase();
     if (letter == "") {
       document.getElementById("picture-box").innerHTML =
       "Please enter a letter";
