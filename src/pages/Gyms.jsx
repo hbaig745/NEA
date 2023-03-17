@@ -39,7 +39,7 @@ function Gyms({ navigation }) {
       document.getElementById("picture-box").style.color = "red";
       return;
     }
-    
+
     document.getElementById("picture-box").style.color = "white";
 
     axios
@@ -53,12 +53,20 @@ function Gyms({ navigation }) {
   }
 
   function gym_info() {
-    if (document.getElementById("current_gym").value == "") {
-      document.getElementById("current_gym").placeholder =
-        "Please enter a letter";
+    let letter = document.getElementById("current_gym").value;
+    if (letter == "") {
+      document.getElementById("picture-box").innerHTML =
+      "Please enter a letter";
       document.getElementById("picture-box").style.color = "red";
       return;
     }
+    if (!(letter == 'A' || letter == 'B' || letter == 'C' || letter == 'D' || letter == 'E' || letter == 'F' || letter == 'G') ){
+      document.getElementById("picture-box").innerHTML =
+      "Please enter a valid letter";
+      document.getElementById("picture-box").style.color = "red";
+      return;
+    }
+    
     document.getElementById("picture-box").style.color = "white";
     var current_gym = document.getElementById("current_gym").value;
 
